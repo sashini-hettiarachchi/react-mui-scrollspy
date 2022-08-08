@@ -24,10 +24,16 @@
 .menuBody{
   height: 100%;
   overflow-y: scroll;
+  padding: 1%;
 }
 .menuItemContainer{
   display: grid;
-  grid-template-rows : 10% 90%
+  grid-template-rows : 5% 90%;
+  margin-bottom: 1%;
+}
+.menuCategoryName{
+  font-size: 1.5rem;
+  color: blue;
 }
 
 .menuItemWrapper{
@@ -41,4 +47,8 @@
 
 .menuItemImage{
   max-width: 240px;
+}
+
+.menuItemName {
+  font-size: 1.5rem;
 }

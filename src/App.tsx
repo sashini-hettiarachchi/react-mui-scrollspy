@@ -18,7 +18,7 @@ function App() {
                 {category.items.map((item) => (
                   <div key={item.id} className="menuItem">
                     <img src={item.image} alt={item.name} className="menuItemImage"/>
-                    <p>{item.name}</p>
+                    <p className="menuItemName">{item.name}</p>
                   </div>
                 ))}
               </div>
