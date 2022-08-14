@@ -1,11 +1,14 @@
+body{
+  font-size: 10px;
+}
 .app{
   height: 100vh;
   width: 100vw;
-  font-size: 10px;
   background-color: rgb(223, 246, 246);
 }
 .menuWrapper{
   height: 100%;
+  padding: 2rem;
 }
 
 .menuCategoryWrapper{
@@ -15,21 +18,24 @@
 }
 
 .menuCategories{
-  font-size: 2.2rem;
-  border: 1px solid rgb(0, 0, 0);
+  font-size: 1.2rem;
+  border: 2px solid rgb(22 172 245);
   padding: 1%;
   border-radius: 20px;
- ;
+  width: 200px;
+  max-width: 100px;
+  justify-content: center;
 }
 .menuBody{
   height: 100%;
   overflow-y: scroll;
-  padding: 1%;
+  padding: 1rem;
 }
 .menuItemContainer{
   display: grid;
   grid-template-rows : 5% 90%;
-  margin-bottom: 1%;
+  grid-row-gap: 2.2rem;
+  margin-bottom: 1rem;
 }
 .menuCategoryName{
   font-size: 1.5rem;
@@ -42,35 +48,45 @@
 }
 
 .menuItem{
-  max-width: 60%;
+  /* max-width: 60%; */
+}
+
+.menuItemImageWrapper{
+  max-width: 100%;
+  max-height: 80%;
 }
 
 .menuItemImage{
   max-width: 240px;
+  max-height: 240px;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 1.5rem;
 }
 
 .menuItemName {
-  font-size: 1.5rem;
-}
-
-@media screen and (max-width: 480px) {
-  .menuItemWrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 768px) {
-
-}
-
-@media screen and (max-width: 1024px) {
-  .menuItemWrapper {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  font-size: 1.2rem;
 }
 
 @media screen and (max-width: 1200px) {
   .menuItemWrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+}
+
+@media screen and (max-width: 1024px) {
+  .menuItemWrapper {
+    grid-template-columns: 1fr 1fr 1fr ;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menuItemWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  
 }

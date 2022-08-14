@@ -17,7 +17,9 @@ function App() {
               <div className="menuItemWrapper">
                 {category.items.map((item) => (
                   <div key={item.id} className="menuItem">
-                    <img src={item.image} alt={item.name} className="menuItemImage"/>
+                    <div className="menuItemImageWrapper">
+                      <img src={item.image} alt={item.name} className="menuItemImage"/>
+                    </div>
                     <p className="menuItemName">{item.name}</p>
                   </div>
                 ))}
