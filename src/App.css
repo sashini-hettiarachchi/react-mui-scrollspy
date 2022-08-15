@@ -2,7 +2,7 @@ body{
   font-size: 10px;
 }
 .app{
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: rgb(223, 246, 246);
 }
@@ -15,6 +15,8 @@ body{
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  border: 1px solid;
+  padding: 1rem 0;
 }
 
 .menuCategories{
@@ -24,22 +26,44 @@ body{
   border-radius: 20px;
   width: 200px;
   max-width: 100px;
-  justify-content: center;
+  text-align: center;
+  cursor: pointer;
 }
+
+.menuCategoriesClicked{
+  background: linear-gradient(45deg, rgb(214 238 249), #9fe2f4);
+
+}
+
+.categoryName{
+  text-transform: uppercase;
+}
+
 .menuBody{
-  height: 100%;
   overflow-y: scroll;
   padding: 1rem;
+  border: 1px solid;
+  height: calc(100vh - 11.5rem);
 }
+
 .menuItemContainer{
   display: grid;
-  grid-template-rows : 5% 90%;
   grid-row-gap: 2.2rem;
   margin-bottom: 1rem;
+  
+}
+
+.menuItemContainer:not(:last-child){
+  border-bottom: 1px solid black;
 }
 .menuCategoryName{
   font-size: 1.5rem;
-  color: blue;
+  color: rgb(9, 9, 9);
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(45deg, rgb(214 238 249), #9fe2f4);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .menuItemWrapper{
@@ -63,6 +87,12 @@ body{
   height: 240px;
   object-fit: cover;
   border-radius: 1.5rem;
+}
+
+.menuItemImage:hover{
+  transform: scale(1.2);
+  box-shadow: 10px 10px 5px #caf1f8;
+  transition: transform 0.5s ease-in-out;
 }
 
 .menuItemName {
@@ -89,4 +119,11 @@ body{
 
 @media screen and (max-width: 480px) {
   
+}
+
+@keyframes scale {
+
+  to {
+    transform: scale(1.3);
+  }
 }

@@ -7,7 +7,7 @@ function App() {
       <div className="menuWrapper">
         <div className="menuCategoryWrapper">
           {list.map((category) => (
-            <div key={category.categoryId} className="menuCategories">{category.categoryName}</div>
+            <div key={category.categoryId} className="menuCategories"><span className="categoryName">{category.categoryName}</span></div>
           ))}
         </div>
         <div className="menuBody">
