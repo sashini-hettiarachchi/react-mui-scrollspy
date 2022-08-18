@@ -1,18 +1,54 @@
+import { Tab, Tabs } from "@mui/material";
+import { useState } from "react";
+import { scrollIntoView } from "seamless-scroll-polyfill/lib/scrollIntoView";
 import "./App.css";
 import { list } from "./data";
 
 function App() {
+
+  const [value, setValue] = useState(0);
+
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+    scrollIntoView(document.getElementById(`menu_${newValue}`), {
+      behavior: "smooth",
+      block: "start",
+      inline: "center",
+    });
+  };
+
+  // const handleScroll = () => {
+  //     list.forEach((element, index) => {
+  //     const observer = new IntersectionObserver(
+  //       (entries) => {
+  //         const intersectedDiv = entries.find((entry) => entry.isIntersecting === true);
+  //         if (intersectedDiv) {
+  //           const target = intersectedDiv.target.id.split("_");
+  //           const intersectedDivIndex = target[1];
+  //           setValue(parseInt(intersectedDivIndex, 10));
+  //         }
+  //       },
+  //       { root: document.querySelector("#menuContainer"), threshold: 0.51 },
+  //     );
+  //     document.getElementById(`menu_${index}`) && observer.observe(document.getElementById(`menu_${index}`));
+  //   });
+    
+  // };
+
+
   return (
     <div className="app">
       <div className="menuWrapper">
         <div className="menuCategoryWrapper">
           {list.map((category) => (
-            <div key={category.categoryId} className="menuCategories"><span className="categoryName">{category.categoryName}</span></div>
+              <Tabs value={value}  aria-label="basic tabs example" onChange={handleChange}>
+              <Tab label={category.categoryName} className="menuCategories" ></Tab>
+            </Tabs>
           ))}
         </div>
         <div className="menuBody">
           {list.map((category) => (
-            <div key={category.categoryId} className="menuItemContainer">
+            <div key={category.categoryId} className="menuItemContainer" id={`menu_${category.categoryId}`}>
               <div className="menuCategoryName">{category.categoryName}</div>
               <div className="menuItemWrapper">
                 {category.items.map((item) => (
