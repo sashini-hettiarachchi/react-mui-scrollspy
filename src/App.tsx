@@ -45,7 +45,7 @@ function App() {
         <div className="menuCategoryWrapper">
           {list.map((category, index) => (
             <Tabs value={value}  aria-label="basic tabs example" onChange={handleChange}>
-              <Tab label={category.categoryName} className="menuCategories" value={index}></Tab>
+              <Tab label={category.categoryName}  value={index}></Tab>
             </Tabs>
           ))}
         </div>

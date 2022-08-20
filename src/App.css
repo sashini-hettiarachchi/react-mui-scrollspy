@@ -13,7 +13,6 @@ body{
 
 .menuCategoryWrapper{
   display: flex;
-  width: 100%;
   justify-content: space-evenly;
   border: 1px solid;
   padding: 1rem 0;
@@ -118,7 +117,29 @@ body{
 }
 
 @media screen and (max-width: 480px) {
-  
+  .menuItemImage{
+    max-width: 100px;
+    max-height: 100px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .menuItemName {
+    font-size: 0.7rem;
+  }
+  .menuCategoryName{
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .menuItemContainer{
+    grid-row-gap: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .menuCategoryWrapper{
+    padding: 0.7rem 0;
+  }
 }
 
 @keyframes scale {
